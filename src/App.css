@@ -1,38 +1,78 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.game-board {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  background-color: #000;
+  background-size: cover; /* Ensure the background image covers the entire game board */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the image */
+  border: 2px solid white;
+  box-sizing: border-box; /* Ensure border size is included in the width and height */
+}
+
+.snake-segment {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  background-color: green;
+  border-radius: 4px;
+}
+
+.food {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  border-radius: 50%;
+}
+
+.food.normal {
+  background-color: red;
+}
+
+.food.special {
+  background-color: gold; /* Special food color */
+}
+
+.barrier {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  background-color: gray;
+  border-radius: 4px;
+}
+
+.score {
   color: white;
+  font-size: 1.5em;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.game-over {
+  color: red;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-over button {
+  font-size: 1em;
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
